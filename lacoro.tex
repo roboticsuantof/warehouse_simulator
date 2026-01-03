@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{listings}
+
+% Configuración de colores y estilo
+\definecolor{darkgrey}{RGB}{30,30,30}
+\definecolor{techblue}{RGB}{0,150,255}
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\color{techblue}}
+{\filleft\MakeUppercase{\chaptertitlename}\ \thechapter}
+{1ex}
+{\titlerule\vspace{1ex}\filright}
+
+\begin{document}
+	
+	\title{\textbf{PROYECTO: ARCHITECT OF SHADOWS}\\ \large Roadmap de Ingeniería Ofensiva y Operaciones de Información}
+	\author{Clasificación: Reservado}
+	\date{2026 - 2029}
+	\maketitle
+	
+	\tableofcontents
+	
+	\chapter{Fundamentos de Infraestructura y OpSec (Meses 1-6)}
+	
+	\section{Identidad Cero y Compartimentación}
+	Establecimiento de la \textbf{Identidad B} (El Fantasma) sin cruce de datos con la vida académica[cite: 258, 266].
+	\begin{itemize}
+		\item \textbf{Hardware:} Configuración de estación de trabajo en Arch Linux con cifrado LUKS y gestión de volúmenes LVM[cite: 268, 533].
+		\item \textbf{Redes de Aislamiento:} Despliegue de Whonix mediante KVM/QEMU para forzar todo el tráfico de la máquina atacante por la red Tor[cite: 113, 114].
+		\item \textbf{Proyecto Práctico:} Desarrollo de un \textit{Panic Button} avanzado en Bash que ejecute \texttt{shred} en archivos de logs y active el \texttt{SysRq trigger} para apagado inmediato[cite: 104, 345, 346].
+	\end{itemize}
+	
+	\section{Administración Profunda de Sistemas (Kernel Internals)}
+	\begin{itemize}
+		\item Estudio de \textit{System Calls} (syscalls) y la diferencia entre User Space y Kernel Space para futuras técnicas de persistencia[cite: 502].
+		\item Gestión de permisos especiales (SUID, SGID) para escalada de privilegios[cite: 512].
+	\end{itemize}
+	
+	\chapter{SIGINT y Comunicaciones Inalámbricas (Meses 7-15)}
+	
+	Dado tu perfil de Ingeniería Eléctrica, esta es tu área de mayor impacto[cite: 13, 58].
+	
+	\section{Análisis del Espectro (SDR)}
+	\begin{itemize}
+		\item \textbf{Hardware:} HackRF One y antenas de alta ganancia (Alfa Network)[cite: 17, 25].
+		\item \textbf{Técnicas:} Uso de GNU Radio para procesamiento de señales digitales[cite: 42].
+		\item \textbf{Intercepción GSM/LTE:} Estudio de arquitectura BTS y ataques de \textit{Downgrade} (forzar 2G) para romper cifrados A5/1[cite: 43, 44, 46].
+	\end{itemize}
+	
+	\section{Proyectos de Hardware Hacktivista}
+	\begin{itemize}
+		\item \textbf{Inhibidor de Audio:} Construcción de un array de transductores ultrasónicos para anular micrófonos en salas de reuniones[cite: 54, 58].
+		\item \textbf{Explotación NFC/RFID:} Uso de Proxmark3 para clonación de llaves de acceso físico en infraestructuras críticas[cite: 22].
+	\end{itemize}
+	
+	\chapter{Desarrollo de Herramientas y Hacking Web (Meses 16-24)}
+	
+	\section{Programación Ofensiva en Python y C}
+	\begin{itemize}
+		\item \textbf{Networking:} Creación de sockets personalizados y \textit{Packet Sniffers} con Scapy[cite: 122, 123, 381].
+		\item \textbf{Evasión de Antivirus (AV Evasion):} Desarrollo de \textit{payloads} FUD (Fully Undetectable) mediante ofuscación y compilación personalizada[cite: 162, 418].
+	\end{itemize}
+	
+	\section{Vectores de Infiltración (Hacking Web)}
+	\begin{itemize}
+		\item Dominio avanzado de \textbf{SQL Injection} manual para el volcado masivo de bases de datos[cite: 156, 159].
+		\item Explotación de vulnerabilidades de \textit{Broken Access Control} (IDOR) y XSS para robo de sesiones administrativas[cite: 617, 618].
+	\end{itemize}
+	
+	\chapter{Movimiento Lateral y Exfiltración (Meses 25-33)}
+	
+	\section{Persistencia y Post-Explotación}
+	\begin{itemize}
+		\item \textbf{Pivoting:} Uso de una máquina comprometida como salto para infiltrar redes internas[cite: 167].
+		\item \textbf{Limpieza Forense:} Automatización del borrado de \texttt{/var/log/auth.log} y registros de eventos sin dejar rastro[cite: 169, 171].
+	\end{itemize}
+	
+	\section{Sanitización de Datos (Leaks)}
+	\begin{itemize}
+		\item Técnicas de eliminación masiva de metadatos (EXIF, OLE) para proteger la fuente del \textit{leak}[cite: 110, 186].
+		\item Publicación en redes resilientes a la censura y uso de \textit{Dead Man's Switches}[cite: 81, 187].
+	\end{itemize}
+	
+	\chapter{Maestría y Soberanía Digital (Meses 34-42)}
+	
+	\section{Criptografía y Economía Anónima}
+	\begin{itemize}
+		\item Implementación de \textit{Cold Storage} para Monero (XMR) en sistemas \textit{air-gapped}[cite: 450, 453].
+		\item Uso de esteganografía para ocultar datos críticos dentro de archivos comunes[cite: 192].
+	\end{itemize}
+	
+	\section{Síntesis: Operaciones Reales}
+	\begin{itemize}
+		\item Simulación de ataques complejos en entornos de \textit{Active Directory}.
+		\item Participación en Wargames avanzados (Hack The Box / TryHackMe) con enfoque en Red Team[cite: 196, 197].
+	\end{itemize}
+	
+\end{document}
